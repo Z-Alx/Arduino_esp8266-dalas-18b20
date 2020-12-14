@@ -17,9 +17,9 @@ String gradus = "°C";
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
 
-char auth[] = "4gq-zwm08RB2FYH9AAM0DNuyPgncN1Jd";
-char ssid[] = "ist";
-char pass[] = "qwerty123";
+char auth[] = "4gq-zwm08RB2FYH9AAM0DNuyPgncN";
+char ssid[] = "ssid";
+char pass[] = "password";
 
 void setup() 
 {
@@ -45,7 +45,7 @@ void sendAlarm()
     Timer = millis(); 
     message = String("Температура в доме опустилась ниже установленного предела в 14°C и равна ") + temp + gradus;
     theme = String("Warning sensor t =") + temp + gradus;
-    Blynk.email("ifinch.pw@gmail.com", theme, message);
+    Blynk.email("mymail@gmail.com", theme, message);
     Blynk.notify (theme);
    }
   }
